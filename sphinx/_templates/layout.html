@@ -1,0 +1,54 @@
+{% extends "!layout.html" %}
+{% block extrahead %}
+	<link rel="stylesheet" href="{{ pathto("_static/custom.css", True) }}" type="text/css">
+{% endblock %}
+{% block menu %}
+<p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+	<li class="toctree-l1"><a class="reference internal" href="#welcome">Welcome</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+	<li class="toctree-l1"><a class="reference internal" href="//docs.pimoroni.com/blinkt">Blinkt!</a></li>
+	<li class="toctree-l1"><a class="reference internal" href="//docs.pimoroni.com/mote">Mote</a></li>
+</ul>
+{% endblock %}
+{% block footer %}
+<script type="text/javascript">
+	var menuItems = $('.wy-menu-vertical').find('a');
+
+	var scrollItems = menuItems.map(function(){
+		var item = $($(this).attr('href'));
+		if (item.length) { return item; }
+	});
+
+	$(window).on('scroll',function(){
+		var fromTop = $(this).scrollTop()
+
+		var cur = scrollItems.map(function(){
+			if ($(this).offset().top < fromTop+30) return this;
+		});
+
+		cur = cur[cur.length-1];
+		var id = cur && cur.length ? cur[0].id : "";
+
+		var target = $('#'+id);
+		target.attr('id','');
+		window.location.hash = '#'+id;
+		target.attr('id',id);
+
+		menuItems
+			.parent().removeClass("current")
+			.end().filter("[href='#"+id+"']").parent().addClass("current");
+	});
+
+	$(window).on('hashchange',function(){
+
+		var hash = window.location.hash.replace('#','');
+
+		menuItems
+			.parent().removeClass("current")
+			.end().filter("[href='#"+hash+"']").parent().addClass("current");
+	})
+</script>
+{% endblock %}
