@@ -13,13 +13,15 @@ class Doc():
 
     def pickle(self):
         return {'name': self.name, 'url': self.url}
-        
+
 
 docs = [
     Doc('Blinkt!','blinkt'),
     Doc('MicroDot pHAT','microdotphat'),
     Doc('Scroll pHAT','scrollphat'),
-    Doc('Mote','mote')
+    Doc('Mote','mote'),
+    Doc('Piano HAT','pianohat'),
+    Doc('Drum HAT','drumhat')
 ]
 
 docs = map(lambda x:x.pickle(), docs)
