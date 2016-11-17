@@ -9,8 +9,9 @@
 </ul>
 <p class="caption"><span class="caption-text">Documentation</span></p>
 <ul>
-	<li class="toctree-l1"><a class="reference internal" href="//docs.pimoroni.com/blinkt">Blinkt!</a></li>
-	<li class="toctree-l1"><a class="reference internal" href="//docs.pimoroni.com/mote">Mote</a></li>
+{% for doc in docs %}
+	<li class="toctree-l1"><a class="reference internal" href="//docs.pimoroni.com/{{ doc.url }}">{{ doc.name }}</a></li>
+{% endfor %}
 </ul>
 {% endblock %}
 {% block footer %}

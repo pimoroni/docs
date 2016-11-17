@@ -6,6 +6,27 @@ PACKAGE_MODULE = "documentation"
 
 import sphinx_rtd_theme
 
+class Doc():
+    def __init__(self, name, url):
+        self.name = name
+        self.url = url
+
+    def pickle(self):
+        return {'name': self.name, 'url': self.url}
+        
+
+docs = [
+    Doc('Blinkt!','blinkt'),
+    Doc('MicroDot pHAT','microdotphat'),
+    Doc('Scroll pHAT','scrollphat'),
+    Doc('Mote','mote')
+]
+
+docs = map(lambda x:x.pickle(), docs)
+docs = sorted(docs, key=lambda x: x['name'])
+
+html_context = {'docs': docs}
+
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
