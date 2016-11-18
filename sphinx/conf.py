@@ -21,7 +21,9 @@ docs = [
     Doc('Scroll pHAT','scrollphat'),
     Doc('Mote','mote'),
     Doc('Piano HAT','pianohat'),
-    Doc('Drum HAT','drumhat')
+    Doc('Drum HAT','drumhat'),
+    Doc('Enviro pHAT','envirophat'),
+    Doc('Mote pHAT','motephat')
 ]
 
 docs = map(lambda x:x.pickle(), docs)
