@@ -23,7 +23,8 @@ docs = [
     Doc('Piano HAT','pianohat'),
     Doc('Drum HAT','drumhat'),
     Doc('Enviro pHAT','envirophat'),
-    Doc('Mote pHAT','motephat')
+    Doc('Mote pHAT','motephat'),
+    Doc('Pan Tilt HAT','pantilthat')
 ]
 
 docs = map(lambda x:x.pickle(), docs)
