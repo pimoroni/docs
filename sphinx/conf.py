@@ -16,6 +16,9 @@ class Doc():
 
 
 docs = [
+    Doc('Inky pHAT','inkyphat'),
+    Doc('Unicorn HAT','unicornhat'),
+    Doc('Unicorn HAT HD','unicornhathd'),
     Doc('Blinkt!','blinkt'),
     Doc('MicroDot pHAT','microdotphat'),
     Doc('Scroll pHAT','scrollphat'),
@@ -28,7 +31,8 @@ docs = [
     Doc('pHAT BEAT','phatbeat'),
     Doc('Scroll pHAT HD','scrollphathd'),
     Doc('Four Letter pHAT','fourletterphat'),
-    Doc('Touch pHAT','touchphat')
+    Doc('Touch pHAT','touchphat'),
+    Doc('Rainbow HAT','rainbowhat')
 ]
 
 docs = map(lambda x:x.pickle(), docs)
