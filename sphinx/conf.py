@@ -32,7 +32,8 @@ docs = [
     Doc('Scroll pHAT HD','scrollphathd'),
     Doc('Four Letter pHAT','fourletterphat'),
     Doc('Touch pHAT','touchphat'),
-    Doc('Rainbow HAT','rainbowhat')
+    Doc('Rainbow HAT','rainbowhat'),
+    Doc('Button SHIM','buttonshim')
 ]
 
 docs = map(lambda x:x.pickle(), docs)
